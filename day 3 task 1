@@ -1,0 +1,23 @@
+bagalar=[]
+y=0
+M1=int(input(' модуль бағалар енгізіңі(не меньше 0 и не больше 100):'))
+M2=int(input('модуль бағалар енгізіңі(не меньше 0 и не больше 100):'))
+Ex=int(input('экзамен бағалар енгізіңі(не меньше 0 и не больше 100):'))
+while True:
+    x = int(input('Бағалар енгізіңі(не меньше 0 и не больше 100):'))
+    if x<0 or x>100:
+        break
+    else:
+        bagalar.append(x)
+    y+=1
+mid=sum(bagalar)/y
+prom=mid*0.4+(((M1+M2)/2)*0.2)
+rate =prom+(Ex*0.4)
+if rate<90:
+    ex_above=(90-rate)+(rate-prom)
+    if ex_above <=100 and ex_above>=0:
+        print('баллы твоего экзамена должны быть выше:',ex_above)
+    else:
+        print('ничего тебе уже не поможеть')
+else:
+    print('твоя оценка хороша')
